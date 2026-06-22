@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BVR Debriefing System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style11.css">
+</head>
+
+<body>
+
+    <!-- =============================================
+       LEFT SIDEBAR
+  ============================================== -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo-icon">
+                <!-- Eagle / star emblem in SVG -->
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                    <polygon points="22,4 26,16 38,16 28,24 32,36 22,29 12,36 16,24 6,16 18,16" fill="#00C553"
+                        opacity="0.9" />
+                    <circle cx="22" cy="22" r="6" fill="#0B1320" />
+                    <circle cx="22" cy="22" r="3" fill="#00C553" />
+                </svg>
+            </div>
+            <div class="logo-text">
+                <span class="logo-main">BVR</span>
+                <span class="logo-sub">DEFENSE SYS.</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" onclick="setActive(this)">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path
+                        d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+                </svg>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="nav-item" onclick="setActive(this)">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                    <path fill-rule="evenodd"
+                        d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
+                        clip-rule="evenodd" />
+                </svg>
+                <span>Scenarios</span>
+            </a>
+            <a href="#" class="nav-item" onclick="setActive(this)">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                        clip-rule="evenodd" />
+                </svg>
+                <span>Replay</span>
+            </a>
+            <a href="#" class="nav-item" onclick="setActive(this)">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path
+                        d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                </svg>
+                <span>Aircraft</span>
+            </a>
+            <a href="#" class="nav-item" onclick="setActive(this)">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z"
+                        clip-rule="evenodd" />
+                </svg>
+                <span>Missile Events</span>
+            </a>
+            <a href="#" class="nav-item" onclick="setActive(this)">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm2 10a1 1 0 10-2 0v3a1 1 0 102 0v-3zm2-3a1 1 0 011 1v5a1 1 0 11-2 0v-5a1 1 0 011-1zm4-1a1 1 0 10-2 0v7a1 1 0 102 0V8z"
+                        clip-rule="evenodd" />
+                </svg>
+                <span>Reports</span>
+            </a>
+            <a href="#" class="nav-item" onclick="setActive(this)">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                        clip-rule="evenodd" />
+                </svg>
+                <span>Exports</span>
+            </a>
+            <a href="#" class="nav-item" onclick="setActive(this)">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+                        clip-rule="evenodd" />
+                </svg>
+                <span>Settings</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- =============================================
+       MAIN CONTENT
+  ============================================== -->
+    <main class="main-content">
+
+        <!-- TOP HEADER BAR -->
+        <header class="top-header">
+            <div class="header-title">
+                <h1 class="bvr-title">BVR DEBRIEFING SYSTEM</h1>
+                <p class="header-subtitle">MISSION ANALYSIS &amp; DEBRIEFING</p>
+            </div>
+            <div class="header-right">
+                <div class="header-datetime">
+                    <span id="liveDate">18 JUN 2025</span>
+                    <span id="liveTime" class="live-time">14:35:22</span>
+                </div>
+                <div class="header-operator">
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="#8B949E">
+                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <span>OPERATOR</span>
+                    <svg width="12" height="12" viewBox="0 0 20 20" fill="#8B949E">
+                        <path fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+            </div>
+        </header>
+
+        <!-- ===== STAT CARDS ===== -->
+        <section class="stats-row">
+            <div class="stat-card">
+                <div class="stat-icon icon-blue">
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                        <path fill-rule="evenodd"
+                            d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-label">TOTAL SCENARIOS</span>
+                    <span class="stat-value">25</span>
+                    <span class="stat-sub">All time</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon icon-green">
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-label">SUCCESS</span>
+                    <span class="stat-value success-val">18</span>
+                    <span class="stat-sub">72%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon icon-yellow">
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 9a1 1 0 112 0v4a1 1 0 11-2 0V9zm1-5.25a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-label">PARTIAL SUCCESS</span>
+                    <span class="stat-value partial-val">4</span>
+                    <span class="stat-sub">16%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon icon-red">
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-label">FAILED</span>
+                    <span class="stat-value failed-val">3</span>
+                    <span class="stat-sub">12%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon icon-cyan">
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-label">TOTAL MISSILES FIRED</span>
+                    <span class="stat-value cyan-val">153</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon icon-blue">
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                            d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-label">TOTAL AIRCRAFT</span>
+                    <span class="stat-value">42</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEARCH / FILTER BAR ===== -->
+        <section class="filter-bar">
+            <div class="filter-field">
+                <label>SCENARIO NAME</label>
+                <div class="input-wrap">
+                    <input type="text" id="filterName" placeholder="Enter scenario name...">
+                    <svg class="input-icon" viewBox="0 0 20 20" fill="#8B949E">
+                        <path fill-rule="evenodd"
+                            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+            </div>
+            <div class="filter-field">
+                <label>DATE FROM</label>
+                <div class="input-wrap">
+                    <input type="date" id="filterDateFrom" placeholder="dd/mm/yyyy">
+                    <svg class="input-icon" viewBox="0 0 20 20" fill="#8B949E">
+                        <path fill-rule="evenodd"
+                            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+            </div>
+            <div class="filter-field">
+                <label>DATE TO</label>
+                <div class="input-wrap">
+                    <input type="date" id="filterDateTo">
+                    <svg class="input-icon" viewBox="0 0 20 20" fill="#8B949E">
+                        <path fill-rule="evenodd"
+                            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+            </div>
+            <div class="filter-field">
+                <label>STATUS</label>
+                <select id="filterStatus">
+                    <option value="">All Status</option>
+                    <option value="SUCCESS">Success</option>
+                    <option value="FAILED">Failed</option>
+                    <option value="PARTIAL">Partial</option>
+                </select>
+            </div>
+            <button class="search-btn" onclick="applyFilter()">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                        clip-rule="evenodd" />
+                </svg>
+                SEARCH
+            </button>
+        </section>
+
+        <!-- ===== SCENARIO TABLE ===== -->
+        <section class="table-section">
+            <div class="table-header-row">
+                <h2 class="table-title">SCENARIO EXECUTION LIST</h2>
+            </div>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>S.NO</th>
+                            <th>SCENARIO NAME</th>
+                            <th>EXECUTION DATE</th>
+                            <th>START TIME</th>
+                            <th>END TIME</th>
+                            <th>DURATION</th>
+                            <th>AIRCRAFT</th>
+                            <th>MISSILES FIRED / HIT</th>
+                            <th>RESULT</th>
+                            <th>STATUS</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scenarioTableBody">
+                        <tr>
+                            <td>1</td>
+                            <td>Aircraft1</td>
+                            <td>23-June-2025</td>
+                            <td>13:20</td>
+                            <td>13:25</td>
+                            <td>05 min</td>
+                            <td>F-16</td>
+                            <td>15/15</td>
+                            <td>HIT</td>
+                            <td>SUCCESS</td>
+                            <td>
+                                <button class="action-btn"></button>
+                            </td>
+                        </tr>
+                        <!-- JS renders rows here -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-footer">
+                <span id="tableCount">Showing 1 to 5 of 5 records</span>
+                <div class="pagination">
+                    <button class="page-btn">&lsaquo;</button>
+                    <button class="page-btn active-page">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn">&rsaquo;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== BOTTOM 4-PANEL SECTION ===== -->
+        <section class="bottom-grid">
+
+            <!-- Mission Timeline -->
+            <div class="bottom-card" id="timelinePanel">
+                <div class="bottom-card-header">
+                    <h3>MISSION TIMELINE</h3>
+                    <span class="card-subtitle" id="timelineScenarioName">Air Patrol Alpha</span>
+                </div>
+                <div class="timeline-list" id="timelineList">
+                    <!-- JS fills this -->
+                </div>
+            </div>
+
+            <!-- Mission Map Preview -->
+            <div class="bottom-card map-card">
+                <div class="bottom-card-header">
+                    <h3>MISSION MAP PREVIEW</h3>
+                </div>
+                <div class="map-area">
+                    <canvas id="missionMapCanvas" width="320" height="180"></canvas>
+                    <div class="map-legend">
+                        <div class="legend-item"><span class="legend-dot friendly"></span> Friendly</div>
+                        <div class="legend-item"><span class="legend-dot enemy"></span> Enemy</div>
+                        <div class="legend-item"><span class="legend-line missile"></span> Missile Track</div>
+                        <div class="legend-item"><span class="legend-dot waypoint"></span> Waypoint</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scenario Summary -->
+            <div class="bottom-card">
+                <div class="bottom-card-header">
+                    <h3>SCENARIO SUMMARY</h3>
+                </div>
+                <div class="summary-list" id="summaryList">
+                    <!-- JS fills this -->
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="bottom-card">
+                <div class="bottom-card-header">
+                    <h3>QUICK ACTIONS</h3>
+                </div>
+                <div class="quick-actions">
+                    <button class="quick-btn" onclick="alert('Replay launched')">
+                        <svg viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        REPLAY SCENARIO
+                    </button>
+                    <button class="quick-btn" onclick="alert('Opening screenshots')">
+                        <svg viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        VIEW SCREENSHOTS
+                    </button>
+                    <button class="quick-btn" onclick="exportCSV()">
+                        <svg viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        EXPORT CSV
+                    </button>
+                    <button class="quick-btn" onclick="alert('Generating PDF report')">
+                        <svg viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        EXPORT PDF REPORT
+                    </button>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="bvr.js"></script>
+</body>
+
+</html>

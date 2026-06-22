@@ -1,0 +1,113 @@
+body {
+    background: #111A26;
+    margin: 5px;
+}
+
+#container {
+    width: 1520px;
+    margin: 5px;
+
+}
+
+#header {
+    border: 2px solid black;
+    height: 60px;
+    color: #e6e6e6;
+    background-color: #0B1320;
+    margin-bottom: 10px;
+    padding-left: 15px;
+}
+
+/* First Row */
+
+#row1 {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+#mission {
+    width: 180px;
+    height: 330px;
+    color: #e6e6e6;
+    border: 2px solid #2C3444;
+    background-color: #1E2633;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+#map {
+    width: 1000px;
+    height: 330px;
+    border: 2px solid black;
+    background-image: url('ma.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 30px;
+}
+
+#rightpanel {
+    width: 220px;
+}
+
+#box1,
+#box2,
+#box3 {
+    height: 98px;
+    width: 310px;
+    border: 2px solid black;
+    margin-bottom: 15px;
+}
+
+/* Second Row */
+
+#row2 {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+#instruction {
+    width: 180px;
+    height: 180px;
+    border: 2px solid black;
+}
+
+#timeline {
+    width: 500px;
+    height: 180px;
+    border: 2px solid black;
+}
+
+#event {
+    width: 220px;
+    height: 180px;
+    border: 2px solid black;
+}
+
+/* Bottom Row */
+
+#row3 {
+    display: flex;
+    gap: 15px;
+}
+
+#bottom1 {
+    width: 450px;
+    height: 100px;
+    border: 2px solid black;
+}
+
+#bottom2,
+#bottom3,
+#bottom4 {
+    width: 150px;
+    height: 100px;
+    border: 2px solid black;
+}
