@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    background: #111A26;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#sidebar {
+    width: 220px;
+    height: 100vh;
+    background-color: #1b2331;
+    border-right: 1px solid #2C3444;
+    font-family: "Russo one", sans-serif;
+    color: #8b949e;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+#logo {
+    height: 90px;
+    border-bottom: 1px solid #2C3444;
+    color: #00c553;
+    box-sizing: border-box;
+    font-family: "Russo One", sans-serif;
+    font-size: 24px;
+    padding-top: 20px;
+}
+
+.menu {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.menu i {
+    color: white;
+}
+
+#main {
+    flex: 1;
+    padding: 10px;
+    gap: 10px;
+
+}
+
+#header {
+    height: 80px;
+    border-bottom: 1px solid #2C3444;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    font-size: 22px;
+    color: #00c553;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+
+}
+
+.header-datetime {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    color: #649af7;
+}
+
+#metrics {
+    display: flex;
+    gap: 10px;
+    margin: 20px;
+}
+
+.card {
+    flex: 1;
+    height: 100px;
+    border: 1px solid #2C3444;
+    background-color: #1e2633;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #8b949e;
+}
+
+#info {
+    margin: 20px;
+    border: 1px solid #2C3444;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    background-color: #1e2633;
+    gap: 50px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+
+#table {
+    height: 100px;
+    border: 1px solid #2C3444;
+    margin: 20px;
+    background-color: #1e2633;
+
+}
+
+th {
+    text-align: left;
+    padding: 8px 12px;
+
+}
+
+#details {
+    display: flex;
+    margin: 20px;
+    gap: 10px;
+}
+
+#timeline {
+    flex: 1;
+    height: 100px;
+    border: 1px solid #2C3444;
+    background-color: #1e2633;
+
+}
+
+#map {
+    flex: 1;
+    height: 100px;
+    border: 1px solid #2C3444;
+    background-color: #1e2633;
+
+}
+
+#summary {
+    flex: 1;
+    height: 100px;
+    border: 1px solid #2C3444;
+    background-color: #1e2633;
+
+}
+
+#setiing {
+    flex: 1;
+    height: 100px;
+    border: 1px solid #2C3444;
+    background-color: #1e2633;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}

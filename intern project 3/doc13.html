@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BVR DEBRIEFING</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style13.css">
+</head>
+
+<body>
+    <div id="sidebar">
+        <div id="logo">
+            BVR
+        </div>
+        <div class="menu"><i class="fa-solid fa-chart-line"></i>Dashboard</div>
+        <div class="menu">Scenario</div>
+        <div class="menu">Replay</div>
+        <div class="menu">Aircraft</div>
+        <div class="menu">Missile Events</div>
+        <div class="menu">Reports</div>
+        <div class="menu">Exports</div>
+        <div class="menu">Settings</div>
+
+    </div>
+    <div id="main">
+        <div id="header">
+            <span>BVR DEBRIEFING SYSTEM</span>
+            <div class="header-datetime">
+                <span>27 June 2026</span>
+                <span>15:41</span>
+            </div>
+        </div>
+
+        <div id="metrics">
+            <div class="card">TOTAL SCENARIO</div>
+            <div class="card">SUCCESS</div>
+            <div class="card">PARTIAL SUCCESS</div>
+            <div class="card">FAILED</div>
+            <div class="card">MISSILES</div>
+            <div class="card">AIRCRAFT</div>
+
+        </div>
+
+        <div id="info">
+            <div class="input-group">
+                <label>Enter :</label>
+                <input type="text" placeholder="Enter Scenario">
+            </div>
+            <div class="input-group">
+                <label>Date :</label>
+                <input type="date">
+            </div>
+            <div class="input-group">
+                <label>&nbsp;</label>
+                <button>Search</button>
+            </div>
+        </div>
+        <div id="table">Scenarios Execution List
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Sno</th>
+                        <th>Scenario</th>
+                        <th>Date</th>
+                        <th>Missiles</th>
+                        <th>Aircraft</th>
+                        <th>Status</th>
+
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div id="details">
+            <div id="timeline">
+                Mission Timeline
+            </div>
+            <div id="map">
+                Maps
+            </div>
+            <div id="summary">
+                mission summary
+            </div>
+            <div id="setiing">
+                quick settings
+            </div>
+        </div>
+</body>
+
+</html>
