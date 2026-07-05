@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+
+    background: #081420;
+    padding: 10px;
+}
+
+/* Dashboard */
+
+.dashboard {
+
+    width: 100%;
+    min-height: 100vh;
+
+}
+
+/* Header */
+
+.header {
+
+    height: 70px;
+
+    background: #10263d;
+
+    border: 2px solid #1f4d74;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 20px;
+
+    color: white;
+
+    margin-bottom: 20px;
+
+}
+
+.logo {
+
+    font-size: 32px;
+    margin-right: 50px;
+    font-weight: bold;
+
+}
+
+.nav {
+    margin-left: 10px;
+}
+
+/* Main */
+
+.main {
+
+    display: grid;
+
+    grid-template-columns: 230px 1fr 300px;
+
+    gap: 10px;
+
+}
+
+/* Left */
+
+.left {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+/* Center */
+
+.center {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+/* Right */
+
+.right {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+/* Cards */
+
+.card {
+
+    background: #10263d;
+
+    border: 2px solid #1f4d74;
+
+    color: white;
+
+    padding: 15px;
+
+}
+
+/* Left Heights */
+
+.mission {
+
+    height: 300px;
+
+}
+
+.instructor {
+
+    height: 220px;
+
+}
+
+/* Map */
+
+.map {
+
+    height: 300px;
+
+    background: #10263d;
+
+    border: 2px solid #1f4d74;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: white;
+
+    font-size: 40px;
+
+}
+
+/* Timeline */
+
+.timeline {
+
+    height: 220px;
+
+    background: #10263d;
+
+    border: 2px solid #1f4d74;
+
+    color: white;
+
+    padding: 15px;
+
+}
+
+/* Right Heights */
+
+.r1 {
+
+    height: 150px;
+
+}
+
+.r2 {
+
+    height: 200px;
+
+}
+
+.r3 {
+
+    height: 160px;
+
+}
+
+/* Bottom */
+
+.bottom {
+
+    margin-top: 10px;
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+.box {
+
+    height: 120px;
+    background: #10263d;
+
+    border: 2px solid #1f4d74;
+
+}
+
+.box1 {
+    height: 120px;
+    color: white;
+    width: 800px;
+    background: #10263d;
+    border: 2px solid #1f4d74;
+
+}
+
+.box2 {
+    height: 120px;
+    color: white;
+    width: 225px;
+    background: #10263d;
+    border: 2px solid #1f4d74;
+}
+
+.box3 {
+    height: 120px;
+    color: white;
+    width: 225px;
+    background: #10263d;
+    border: 2px solid #1f4d74;
+}
+
+.box4 {
+    height: 120px;
+    color: white;
+    width: 225px;
+    background: #10263d;
+    border: 2px solid #1f4d74;
+}
