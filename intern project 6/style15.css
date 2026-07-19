@@ -1,0 +1,633 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Orbitron";
+    src: url("Orbitron,Russo_One/Orbitron/static/Orbitron-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+body {
+    background: #111A26;
+    color: #E6E6E6;
+
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+}
+
+/* HEADER */
+
+.header {
+    height: 70px;
+    background: #0B1320;
+    border: 2px solid #2C3444;
+    padding: 0 15px;
+    margin-bottom: 10px;
+
+    display: flex;
+    align-items: stretch;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-family: "Orbitron", sans-serif;
+    font-size: 32px;
+    margin-right: 50px;
+    font-weight: bold;
+}
+
+.nav {
+    margin-left: 10px;
+    display: flex;
+    padding: 0 20px;
+    font-family: sans-serif;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+}
+
+#nav-over {
+    color: #00D4FF;
+    border-bottom: 2px solid #00D4FF;
+    cursor: pointer;
+    background-color: #394346;
+
+}
+
+/* MAIN AREA & LEFT SIDE */
+
+#main-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#left-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ROW 1 */
+
+#row1 {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#mission {
+    width: 220px;
+    min-height: 330px;
+    background: #1E2633;
+    border: 2px solid #2C3444;
+    padding: 10px;
+}
+
+
+
+#mission h3,
+#instruction-summary h3,
+#timeline h3,
+#box1 h3,
+#box2 h3,
+#box3 h3,
+#bottom1 h3,
+#bottom2 h3,
+#bottom3 h3,
+#bottom4 h3 {
+    font-family: "Orbitron", sans-serif;
+    background: #253041;
+    font-size: 12px;
+    border-bottom: 2px solid #2C3444;
+    margin: -10px -10px 10px -10px;
+    padding: 10px;
+}
+
+
+#map {
+    flex: 1;
+    min-height: 330px;
+
+    border: 2px solid #2C3444;
+
+    background-image: url("ma.jpg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#rightpanel {
+    width: 390px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#box1,
+#box2,
+#box3 {
+    flex: 1;
+    box-sizing: border-box;
+    background: #1E2633;
+    padding: 10px;
+}
+
+
+#box1 h3 {
+    color: #00D4FF;
+}
+
+#box2 h3 {
+    color: #FF9F1D;
+}
+
+#box3 h3 {
+    color: #FF4D4D;
+}
+
+/* ROW 2 */
+
+#row2 {
+    display: flex;
+    gap: 10px;
+}
+
+#instruction-summary {
+    width: 220px;
+    min-height: 220px;
+
+    background: #1E2633;
+    border: 2px solid #2C3444;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.overall-rating {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 1px;
+}
+
+.overall-rating p {
+    margin-bottom: -8px;
+}
+
+.rating-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.overall-rating hr {
+    border: none;
+    border-top: 1px solid #2C3444;
+    margin: 1px 0;
+}
+
+.overall-rating h4 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 11px;
+    color: #FF9F1D;
+}
+
+.rating-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#stars {
+    font-size: 24px;
+    color: gold;
+    letter-spacing: 2px;
+}
+
+#overall-rating {
+    font-size: 18px;
+    margin-left: 30px;
+    font-weight: bold;
+
+}
+
+
+#instructor-name {
+    font-size: 11px;
+    font-weight: bold;
+    color: #00D4FF;
+    text-align: right;
+    margin-top: 2px;
+    font-family: sans-serif;
+}
+
+/*mission timiline*/
+#timeline {
+    flex: 1;
+    min-height: 220px;
+
+    background: #1E2633;
+    border: 2px solid #2C3444;
+    padding: 10px;
+}
+
+#timeline-container {
+    height: 280px;
+    overflow-y: auto;
+    padding: 15px;
+
+    /* Hide scrollbar */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+}
+
+#timeline-container::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Edge, Safari */
+}
+
+.timeline-item {
+
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 18px;
+
+}
+
+.timeline-time {
+
+    width: 70px;
+    color: white;
+    font-weight: bold;
+
+}
+
+.timeline-dot {
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    margin: 6px 18px 0 10px;
+
+    flex-shrink: 0;
+
+}
+
+.timeline-content {
+
+    border-left: 2px solid #394659;
+
+    padding-left: 18px;
+    padding-bottom: 18px;
+
+}
+
+.timeline-title {
+
+    color: white;
+    font-weight: bold;
+
+}
+
+.timeline-description {
+
+    color: #B9C2D0;
+    font-size: 13px;
+    margin-top: 4px;
+
+}
+
+/*color*/
+.success {
+
+    background: #00E676;
+
+}
+
+.warning {
+
+    background: #FFC107;
+
+}
+
+.info {
+
+    background: #00C8FF;
+
+}
+
+/*communication table*/
+#communication-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+    font-size: 12px;
+}
+
+#communication-table th {
+    color: #FFA726;
+    font-family: Orbitron, sans-serif;
+    padding: 8px;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+#communication-table td {
+    padding: 8px;
+    border-bottom: 1px solid #384456;
+}
+
+#communication-table tbody tr:hover {
+    background: #242d3e;
+}
+
+/* ROW 3 */
+
+#row3 {
+    display: flex;
+    gap: 10px;
+}
+
+#bottom1 {
+    min-height: 120px;
+    width: 900px;
+
+    background: #1E2633;
+    border: 2px solid #2C3444;
+    padding: 10px;
+}
+
+#bottom2,
+#bottom3,
+#bottom4 {
+    flex: 1;
+
+    min-height: 120px;
+
+    background: #1E2633;
+    border: 2px solid #2C3444;
+    padding: 10px;
+}
+
+/* HEADINGS & PARAGRAPHS */
+
+h2 {
+    font-family: "Orbitron", sans-serif;
+    color: #00D4FF;
+}
+
+h3 {
+    font-family: "Orbitron", sans-serif;
+    color: #00D4FF;
+    margin-bottom: 10px;
+}
+
+p {
+    font-family: monospace;
+    margin-bottom: 8px;
+    padding-left: 5px;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+.circles {
+    display: flex;
+    gap: 20px;
+}
+
+.circle1 {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+
+    --progress: 0%;
+
+    background: conic-gradient(#1ef81e var(--progress),
+            #555 0);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle1 {
+    position: relative;
+}
+
+.circle1::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #1E2633;
+    border-radius: 50%;
+}
+
+.circle1 span {
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.circle1 p {
+    position: absolute;
+    top: 110%;
+    left: 8%;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.circle2 {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+
+    --progress: 0%;
+
+    background: conic-gradient(#eaff08 var(--progress),
+            #555 0);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle2 {
+    position: relative;
+}
+
+.circle2::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #1E2633;
+    border-radius: 50%;
+}
+
+.circle2 span {
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.circle2 p {
+    position: absolute;
+    top: 110%;
+    left: 1%;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Objective TABLE STYLING */
+#box1 table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-family: monospace;
+    font-size: 13px;
+}
+
+#box1 th {
+    font-family: "Orbitron", sans-serif;
+    font-size: 11px;
+    color: #00D4FF;
+    border-bottom: 2px solid #2C3444;
+    padding: 10px 2px;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+#box1 td {
+    padding: 12px 8px;
+    border-bottom: 1px solid #2C3444;
+    color: #E6E6E6;
+    vertical-align: middle;
+}
+
+#box1 tr:hover {
+    background-color: rgba(0, 214, 255, 0.05);
+}
+
+/* Status colors/badges */
+.status-completed {
+    color: #00FF88;
+    font-weight: bold;
+    background: rgba(0, 255, 136, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.status-partial {
+    color: #FF9F1D;
+    font-weight: bold;
+    background: rgba(255, 159, 29, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 159, 29, 0.2);
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+/* Mission Overview detail items */
+.mission-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 5px;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(44, 52, 68, 0.4);
+    padding-bottom: 8px;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.detail-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #8892B0;
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.detail-value {
+    font-size: 16px;
+    color: #F8F9FA;
+    font-family: monospace;
+    font-weight: 500;
+}
+
+.detail-value .status-completed {
+    color: #00FF88;
+    background: rgba(0, 255, 136, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.detail-value .status-in-progress {
+    color: #00D4FF;
+    background: rgba(0, 212, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.detail-value .status-failed,
+.detail-value .status-aborted {
+    color: #FF4D4D;
+    background: rgba(255, 77, 77, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 77, 77, 0.2);
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+}
