@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BVR Debriefing Dashboard</title>
+    <link rel="stylesheet" href="style15.css">
+    <link rel="stylesheet" href="leaflet/dist/leaflet.css">
+    <script src="leaflet/dist/leaflet.js"></script>
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+
+    <div id="container">
+
+        <header class="header">
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00D4FF" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round" style="margin-right: 12px; flex-shrink: 0;">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="6"></circle>
+                    <circle cx="12" cy="12" r="1.5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="4"></line>
+                    <line x1="12" y1="20" x2="12" y2="23"></line>
+                    <line x1="1" y1="12" x2="4" y2="12"></line>
+                    <line x1="20" y1="12" x2="23" y2="12"></line>
+                </svg>Beyond Visual Range
+            </div>
+            <a href="doc15.html" class="nav" id="nav-over">Overview</a>
+            <a href="objectives.html" class="nav">Objectives</a>
+            <a href="timeline.html" class="nav">Timeline</a>
+            <a href="replay.html" class="nav">Replay</a>
+            <a href="decision.html" class="nav">Decision</a>
+
+        </header>
+    </div>
+
+
+    <!-- Main Area (Row 1 & Row 2) -->
+    <div id="main-area">
+
+        <div id="left-side">
+
+            <!-- Row 1 -->
+            <div id="row1">
+
+                <div id="mission">
+                    <h3>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                            style="margin-right: 8px; flex-shrink: 0; position: relative; top: 3px;">
+                            <path d=" M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>Mission Overview
+                        <button title="Edit" class="edit-btn" id="edit-btn">🖉</button>
+                    </h3>
+
+                    <div class="mission-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Name</span>
+                            <span class="detail-value" id="mission-name">Loading...</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Status</span>
+                            <span class="detail-value" id="status">Loading...</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Date</span>
+                            <span class="detail-value" id="date">Loading...</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Duration</span>
+                            <span class="detail-value" id="duration">Loading...</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Aircraft</span>
+                            <span class="detail-value" id="aircraft-count">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="map">
+                    MAP AREA
+                </div>
+
+            </div>
+
+            <!-- Row 2 -->
+            <div id="row2">
+
+                <div id="instruction-summary">
+                    <h3>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                            style="margin-right: 8px; flex-shrink: 0; position: relative; top: 6px;">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>Instruction Summary
+                        <button title="Edit" class="summary-edit-btn" id="summary-edit-btn">🖉</button>
+                    </h3>
+                    <div class="overall-rating">
+                        <p>OVERALL ASSESSMENTS</p>
+                        <div class="rating-row">
+                            <div id="stars"></div>
+                            <span id="overall-rating"></span>
+                        </div>
+                        <span id="overall-rating"></span>
+
+                        <div class="rating-item">
+                            <span>Operational Awareness</span>
+                            <span id="operational-awareness"></span>
+                        </div>
+
+                        <div class="rating-item">
+                            <span>Tactical Decision Making</span>
+                            <span id="tactical-decision"></span>
+                        </div>
+
+                        <div class="rating-item">
+                            <span>Communication</span>
+                            <span id="communication"></span>
+                        </div>
+
+                        <div class="rating-item">
+                            <span>ROE Compliance</span>
+                            <span id="roe-compliance"></span>
+                        </div>
+
+                        <hr>
+
+                        <h4>Instructor Comments</h4>
+
+                        <p id="instructor-comments"></p>
+
+                        <div id="instructor-name"></div>
+
+                    </div>
+                </div>
+
+
+
+                <div id="timeline">
+                    <h3>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                            style="margin-right: 8px; flex-shrink: 0; position: relative; top: 6px;">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>Mission Timeline
+                    </h3>
+                    <div id="timeline-container">LOADING...</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="rightpanel">
+
+            <div id="box1">
+                <h3>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        style="margin-right: 8px; flex-shrink: 0; position: relative; top: 3px;">
+                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                        <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                        <path d="M9 12l2 2 4-4"></path>
+                    </svg>Objective Assessment
+                </h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>OBJECTIVE</th>
+                            <th>WEIGHT</th>
+                            <th>STATUS</th>
+                            <th>SCORE</th>
+                        </tr>
+                    </thead>
+                    <tbody id="objective-body">
+
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div id="box2">
+                <h3>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        style="margin-right: 8px; flex-shrink: 0; position: relative; top: 6px;">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        <line x1="9" y1="9" x2="15" y2="9"></line>
+                        <line x1="9" y1="13" x2="13" y2="13"></line>
+                    </svg>Communication Review
+                </h3>
+                <table id="communication-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Sender</th>
+                            <th>Receiver</th>
+                            <th>Message</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="communication-body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="box3">
+                <h3>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        style="margin-right: 8px; flex-shrink: 0; position: relative; top: 3px;">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                    </svg>Performance Metrics
+                </h3>
+                <div class="circles">
+                    <div class="circle1" id="accuracy-circle">
+                        <span id="accuracy-value"></span>
+                        <br>
+                        <p>Accuracy</p>
+                    </div>
+                    <div class="circle2" id="efficiency-circle">
+                        <span id="efficiency-value"></span>
+                        <p>Efficiency</p>
+                    </div>
+                    <div class="circle3" id="survivability-circle">
+                        <span id="survivability-value"></span>
+                        <p>Survivability</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Row 3 -->
+
+    <div id="row3">
+
+        <div id="bottom1">
+            <h3>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    style="margin-right: 8px; flex-shrink: 0; position: relative; top: 3px;">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>Statistics
+            </h3>
+            <div class="stats-grid">
+                <div class="weapon-stat">
+                    <span class="weapon-label">Max G-Force</span>
+                    <span class="weapon-value highlight">7.8 G</span>
+                </div>
+                <div class="weapon-stat">
+                    <span class="weapon-label">Avg Speed</span>
+                    <span class="weapon-value">485 kts</span>
+                </div>
+                <div class="weapon-stat">
+                    <span class="weapon-label">Radar Lock Duration</span>
+                    <span class="weapon-value">142 sec</span>
+                </div>
+                <div class="weapon-stat">
+                    <span class="weapon-label">Fuel Burn Rate</span>
+                    <span class="weapon-value">85 lbs/min</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="bottom2">
+            <h3>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    style="margin-right: 8px; flex-shrink: 0; position: relative; top: 6px;">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                </svg>Rules of Engagement
+            </h3>
+            <div class="roe-list">
+                <div class="roe-item">
+                    <span class="roe-badge passed">PASSED</span>
+                    <span class="roe-desc">Positive Hostile ID via AWACS</span>
+                </div>
+                <div class="roe-item">
+                    <span class="roe-badge passed">PASSED</span>
+                    <span class="roe-desc">Inside Weapon Launch Envelope</span>
+                </div>
+                <div class="roe-item">
+                    <span class="roe-badge warning">PENDING</span>
+                    <span class="roe-desc">Collateral Damage Check</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="bottom3">
+            <h3>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    style="margin-right: 8px; flex-shrink: 0; position: relative; top: 6px;">
+                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z">
+                    </path>
+                    <circle cx="12" cy="13" r="4"></circle>
+                </svg>Weapons Employment
+            </h3>
+            <div class="weapons-grid">
+                <div class="weapon-stat">
+                    <span class="weapon-label">Primary</span>
+                    <span class="weapon-value highlight">AIM-120C</span>
+                </div>
+                <div class="weapon-stat">
+                    <span class="weapon-label">Launch Mode</span>
+                    <span class="weapon-value">Fox-3 (BVR)</span>
+                </div>
+                <div class="weapon-stat">
+                    <span class="weapon-label">Range</span>
+                    <span class="weapon-value">45.2 NM</span>
+                </div>
+                <div class="weapon-stat">
+                    <span class="weapon-label">Target Status</span>
+                    <span class="weapon-value" style="color: #00FF88;">SPLASHED</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="bottom4">
+            <h3>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    style="margin-right: 8px; flex-shrink: 0; position: relative; top: 3px;">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>Export
+            </h3>
+            <div class="export-actions">
+                <button class="export-btn" onclick="alert('Exporting PDF report...')">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    PDF Report
+                </button>
+                <button class="export-btn" onclick="alert('Exporting CSV telemetry data...')">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="9" y1="3" x2="9" y2="21"></line>
+                        <line x1="15" y1="3" x2="15" y2="21"></line>
+                        <line x1="3" y1="9" x2="21" y2="9"></line>
+                        <line x1="3" y1="15" x2="21" y2="15"></line>
+                    </svg>
+                    CSV Data
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- for mission edit -->
+    <div id="editModal" class="modal" style="display:none">
+
+        <div class="modal-content">
+
+            <h2>Edit Mission Overview</h2>
+
+            <label id="name-edit">Name</label>
+            <input type="text" id="edit-name">
+
+            <label id="status-edit">Status</label>
+            <input type="text" id="edit-status">
+
+            <label id="date-edit">Date</label>
+            <input type="date" id="edit-date">
+
+            <label id="duration-edit">Duration</label>
+            <input type="text" id="edit-duration">
+
+            <label id="aircraft-edit">Aircraft</label>
+            <input type="number" id="edit-aircraft">
+
+            <div class="buttons">
+                <button id="saveBtn">Save</button>
+                <button id="cancelBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- for instruction summary edit -->
+    <div id="summary-modal" class="summary-modal" style="display:none">
+
+        <div class="summary-modal-content">
+
+            <h2>instruction-summary</h2>
+
+            <label id="ow-edit">operational-awareness</label>
+            <input type="number" min="0" max="5" id="edit-ow">
+
+            <label id="tdm-edit">Tactical-decision-making</label>
+            <input type="number" min="0" max="5" id="edit-tdm">
+
+            <label id="comm-edit">Communication</label>
+            <input type="number" min="0" max="5" id="edit-comm">
+
+            <label id="roe-edit">ROE Compliance</label>
+            <input type="number" min="0" max="5" id="edit-roe">
+
+            <label id="instructor-comments-edit">instructor-comments</label>
+            <input type="text" id="edit-instructor-comments">
+
+            <label id="instructor-name-edit">Instructor Name</label>
+            <input type="text" id="edit-instructor-name">
+
+            <div class="buttons">
+                <button id="saveBtn2">Save</button>
+                <button id="cancelBtn2">Cancel</button>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
