@@ -1,0 +1,1317 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Orbitron";
+    src: url("Orbitron,Russo_One/Orbitron/static/Orbitron-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+body {
+    background: #111A26;
+    color: #E6E6E6;
+
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+}
+
+/* HEADER */
+
+.header {
+    height: 70px;
+    background: #0B1320;
+    border: 2px solid #2C3444;
+    padding: 0 15px;
+    margin-bottom: 10px;
+
+    display: flex;
+    align-items: stretch;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-family: "Orbitron", sans-serif;
+    font-size: 32px;
+    margin-right: 50px;
+    font-weight: bold;
+}
+
+.nav {
+    margin-left: 10px;
+    display: flex;
+    padding: 0 20px;
+    font-family: sans-serif;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+}
+
+.nav:hover {
+    background-color: #3e484a;
+}
+
+#nav-over {
+    color: #00D4FF;
+    border-bottom: 2px solid #00D4FF;
+    cursor: pointer;
+    background-color: #394346;
+
+}
+
+
+
+/* MAIN AREA & LEFT SIDE */
+
+#main-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#left-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ROW 1 */
+
+#row1 {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#mission {
+    width: 220px;
+    min-height: 330px;
+    background: #1E2633;
+    border: 2px solid #2C3444;
+    padding: 10px;
+}
+
+.edit-btn {
+    margin-left: 28px;
+    background: none;
+    border: none;
+    color: #00D4FF;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    color: #00D4FF;
+    background-color: #111320;
+    padding: 10px;
+    margin: -25px -25px 10px -25px;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+}
+
+.modal {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+.modal-content {
+
+    width: 420px;
+
+    background: #1d2636;
+
+    border: 1px solid #324055;
+
+    border-radius: 8px;
+
+    padding: 25px;
+
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.2);
+
+}
+
+#name-edit {
+    font-family: "Orbitron", sans-serif;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: flex;
+}
+
+#edit-name,
+#edit-status,
+#edit-date,
+#edit-duration,
+#edit-aircraft {
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #324055;
+    background-color: #161d2a;
+    color: #E6E6E6;
+    width: 100%;
+}
+
+#status-edit {
+    font-family: "Orbitron", sans-serif;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: flex;
+}
+
+#date-edit {
+    font-family: "Orbitron", sans-serif;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: flex;
+}
+
+#duration-edit {
+    font-family: "Orbitron", sans-serif;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: flex;
+}
+
+#aircraft-edit {
+    font-family: "Orbitron", sans-serif;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: flex;
+}
+
+#saveBtn {
+    padding: 10px;
+    background-color: #40c869;
+    color: #1E2633;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 100px;
+}
+
+#cancelBtn {
+    padding: 10px;
+    background-color: #e34545;
+    color: #1E2633;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+#mission h3,
+#instruction-summary h3,
+#timeline h3,
+#box1 h3,
+#box2 h3,
+#box3 h3,
+#bottom1 h3,
+#bottom2 h3,
+#bottom3 h3,
+#bottom4 h3 {
+    font-family: "Orbitron", sans-serif;
+    background: #253041;
+    font-size: 12px;
+    border-bottom: 2px solid #2C3444;
+    margin: -10px -10px 10px -10px;
+    padding: 10px;
+}
+
+
+#map {
+    flex: 1;
+    min-height: 330px;
+
+    border: 2px solid #2C3444;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#rightpanel {
+    width: 390px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#box1,
+#box2,
+#box3 {
+    flex: 1;
+    box-sizing: border-box;
+    background: #1E2633;
+    padding: 10px;
+}
+
+
+#box1 h3 {
+    color: #00D4FF;
+}
+
+#box2 h3 {
+    color: #FF9F1D;
+}
+
+#box3 h3 {
+    color: #FF4D4D;
+}
+
+/* ROW 2 */
+
+#row2 {
+    display: flex;
+    gap: 10px;
+}
+
+#instruction-summary {
+    width: 220px;
+    min-height: 220px;
+
+    background: #1E2633;
+    border: 2px solid #2C3444;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.overall-rating {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 1px;
+}
+
+.overall-rating p {
+    margin-bottom: -8px;
+}
+
+.rating-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.overall-rating hr {
+    border: none;
+    border-top: 1px solid #2C3444;
+    margin: 1px 0;
+}
+
+.overall-rating h4 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 11px;
+    color: #FF9F1D;
+}
+
+.rating-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#stars {
+    font-size: 24px;
+    color: gold;
+    letter-spacing: 2px;
+}
+
+#overall-rating {
+    font-size: 18px;
+    margin-left: 30px;
+    font-weight: bold;
+
+}
+
+
+#instructor-name {
+    font-size: 11px;
+    font-weight: bold;
+    color: #00D4FF;
+    text-align: right;
+    margin-top: 2px;
+    font-family: sans-serif;
+}
+
+/*summary btn edit*/
+#summary-edit-btn {
+    margin-left: 9px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 18px;
+    color: #00D4FF;
+}
+
+/*summary modal*/
+#summary-modal {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+
+}
+
+/*summary modal content*/
+.summary-modal-content {
+
+    width: 420px;
+
+    background: #1d2636;
+
+    border: 1px solid #324055;
+
+    border-radius: 8px;
+
+    padding: 25px;
+
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.2);
+
+}
+
+.summary-modal-content h2 {
+    color: #00D4FF;
+    background-color: #111320;
+    padding: 10px;
+    margin: -25px -25px 10px -25px;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+}
+
+#edit-ow,
+#edit-tdm,
+#edit-comm,
+#edit-roe,
+#edit-instructor-comments,
+#edit-instructor-name {
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #324055;
+    background-color: #161d2a;
+    color: #E6E6E6;
+    width: 100%;
+}
+
+#ow-edit {
+    font-family: "Orbitron", sans-serif;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: flex;
+}
+
+#tdm-edit {
+    font-family: "Orbitron", sans-serif;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: flex;
+}
+
+#comm-edit {
+    font-family: "Orbitron", sans-serif;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: flex;
+}
+
+#roe-edit {
+    font-family: "Orbitron", sans-serif;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: flex;
+}
+
+#instructor-name-edit {
+    font-family: "Orbitron", sans-serif;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: flex;
+}
+
+#instructor-comments-edit {
+    font-family: "Orbitron", sans-serif;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: flex;
+}
+
+#saveBtn2 {
+    padding: 10px;
+    background-color: #40c869;
+    color: #1E2633;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 100px;
+}
+
+#cancelBtn2 {
+    padding: 10px;
+    background-color: #e34545;
+    color: #1E2633;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+
+/*mission timiline*/
+#timeline {
+    flex: 1;
+    min-height: 220px;
+
+    background: #1E2633;
+    border: 2px solid #2C3444;
+    padding: 10px;
+}
+
+#timeline-container {
+    height: 280px;
+    overflow-y: auto;
+    padding: 15px;
+
+    /* Hide scrollbar */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+}
+
+#timeline-container::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Edge, Safari */
+}
+
+.timeline-item {
+
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 18px;
+
+}
+
+.timeline-time {
+
+    width: 70px;
+    color: white;
+    font-weight: bold;
+
+}
+
+.timeline-dot {
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    margin: 6px 18px 0 10px;
+
+    flex-shrink: 0;
+
+}
+
+.timeline-content {
+
+    border-left: 2px solid #394659;
+
+    padding-left: 18px;
+    padding-bottom: 18px;
+
+}
+
+.timeline-title {
+
+    color: white;
+    font-weight: bold;
+
+}
+
+.timeline-description {
+
+    color: #B9C2D0;
+    font-size: 13px;
+    margin-top: 4px;
+
+}
+
+/*color*/
+.success {
+
+    background: #00E676;
+
+}
+
+.warning {
+
+    background: #FFC107;
+
+}
+
+.info {
+
+    background: #00C8FF;
+
+}
+
+/*communication table*/
+#communication-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+    font-size: 12px;
+}
+
+#communication-table th {
+    color: #FFA726;
+    font-family: Orbitron, sans-serif;
+    padding: 8px;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+#communication-table td {
+    padding: 8px;
+    border-bottom: 1px solid #384456;
+}
+
+#communication-table tbody tr:hover {
+    background: #242d3e;
+}
+
+/* ROW 3 */
+
+#row3 {
+    display: flex;
+    gap: 10px;
+}
+
+#bottom1 {
+    min-height: 120px;
+    width: 800px;
+
+    background: #1E2633;
+    border: 2px solid #2C3444;
+    padding: 10px;
+}
+
+#bottom2,
+#bottom3,
+#bottom4 {
+    flex: 1;
+
+    min-height: 120px;
+
+    background: #1E2633;
+    border: 2px solid #2C3444;
+    padding: 10px;
+}
+
+/* HEADINGS & PARAGRAPHS */
+
+h2 {
+    font-family: "Orbitron", sans-serif;
+    color: #00D4FF;
+}
+
+h3 {
+    font-family: "Orbitron", sans-serif;
+    color: #00D4FF;
+    margin-bottom: 10px;
+}
+
+p {
+    font-family: monospace;
+    margin-bottom: 8px;
+    padding-left: 5px;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+.circles {
+    display: flex;
+    gap: 20px;
+}
+
+/*METRIC CIRCLES*/
+.circle1,
+.circle2,
+.circle3 {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --progress: 0%;
+}
+
+.circle1 {
+    background: conic-gradient(#1ef81e var(--progress), #555 0);
+}
+
+.circle2 {
+    background: conic-gradient(#eaff08 var(--progress), #555 0);
+}
+
+.circle3 {
+    background: conic-gradient(#00D4FF var(--progress), #555 0);
+}
+
+.circle1::before,
+.circle2::before,
+.circle3::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #1E2633;
+    border-radius: 50%;
+}
+
+.circle1 span,
+.circle2 span,
+.circle3 span {
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.circle1 p,
+.circle2 p,
+.circle3 p {
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/*metric edit button*/
+#performance-edit-btn {
+    border: none;
+    background: none;
+    margin-left: 180px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #f33535;
+}
+
+#performance-save-btn {
+    height: 25px;
+    width: 50px;
+    font-family: "Orbitron", sans-serif;
+    font-size: 10px;
+    background-color: #40c869;
+    color: #1E2633;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+#performance-cancel-btn {
+    height: 25px;
+    width: 50px;
+    font-family: "Orbitron", sans-serif;
+    font-size: 10px;
+    background-color: #e34545;
+    color: #1E2633;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.performance-input {
+    width: 45px;
+    background: #151d2c;
+    color: #ffffff;
+    border: 1px solid #303d52;
+    border-radius: 4px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 14px;
+    padding: 2px;
+}
+
+/* Objective TABLE STYLING */
+#box1 table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-family: monospace;
+    font-size: 13px;
+}
+
+#box1 th {
+    font-family: "Orbitron", sans-serif;
+    font-size: 11px;
+    color: #00D4FF;
+    border-bottom: 2px solid #2C3444;
+    padding: 10px 2px;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+#box1 td {
+    padding: 12px 8px;
+    border-bottom: 1px solid #2C3444;
+    color: #E6E6E6;
+    vertical-align: middle;
+}
+
+#box1 tr:hover {
+    background-color: rgba(0, 214, 255, 0.05);
+}
+
+/* Status colors/badges */
+.status-completed {
+    color: #00FF88;
+    font-weight: bold;
+    background: rgba(0, 255, 136, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.status-partial {
+    color: #FF9F1D;
+    font-weight: bold;
+    background: rgba(255, 159, 29, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 159, 29, 0.2);
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+/*objective button edit*/
+#objective-edit-btn {
+    margin-left: 170px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 18px;
+    color: #00D4FF;
+}
+
+#objective-save-btn {
+    height: 25px;
+    width: 50px;
+    font-family: "Orbitron", sans-serif;
+    font-size: 10px;
+    background-color: #40c869;
+    color: #1E2633;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+#objective-cancel-btn {
+    height: 25px;
+    width: 50px;
+    font-family: "Orbitron", sans-serif;
+    font-size: 10px;
+    background-color: #e34545;
+    color: #1E2633;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+/*communication button edit*/
+#communication-edit-btn {
+    margin-left: 165px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 18px;
+    color: #ffbf00;
+}
+
+#communication-save-btn {
+    height: 25px;
+    width: 50px;
+    font-family: "Orbitron", sans-serif;
+    font-size: 10px;
+    background-color: #40c869;
+    color: #1E2633;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+#communication-cancel-btn {
+    height: 25px;
+    width: 50px;
+    font-family: "Orbitron", sans-serif;
+    font-size: 10px;
+    background-color: #e34545;
+    color: #1E2633;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+/* Objective and Communication table edit inputs */
+
+.objective-input,
+.weight-input,
+.score-input,
+.status-select,
+.comm-timestamp-input,
+.comm-sender-input,
+.comm-receiver-input,
+.comm-message-input,
+.comm-status-input {
+    width: 100%;
+    box-sizing: border-box;
+
+    background: #151d2c;
+    color: #ffffff;
+
+    border: 1px solid #303d52;
+    border-radius: 4px;
+
+    padding: 6px 8px;
+    font-family: monospace;
+    font-size: 12px;
+}
+
+/* Mission Overview detail items */
+.mission-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 5px;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(44, 52, 68, 0.4);
+    padding-bottom: 8px;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.detail-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #8892B0;
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.detail-value {
+    font-size: 16px;
+    color: #F8F9FA;
+    font-family: monospace;
+    font-weight: 500;
+}
+
+.detail-value .status-completed {
+    color: #00FF88;
+    background: rgba(0, 255, 136, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.detail-value .status-in-progress {
+    color: #00D4FF;
+    background: rgba(0, 212, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.detail-value .status-failed,
+.detail-value .status-aborted {
+    color: #FF4D4D;
+    background: rgba(255, 77, 77, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 77, 77, 0.2);
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+/* ==========================================================================
+   PAGE-SPECIFIC LAYOUTS
+   ========================================================================== */
+
+/* TIMELINE PAGE (Single container div layout) */
+#timeline-main {
+    margin: 10px;
+    background: #1E2633;
+    border: 2px solid #2C3444;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#timeline-main h2 {
+    font-family: "Orbitron", sans-serif;
+    color: #00D4FF;
+    border-bottom: 2px solid #2C3444;
+    margin: -20px -20px 20px -20px;
+    padding: 15px 20px;
+    background: #253041;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* REPLAY PAGE (3 columns parallel layout) */
+#replay-main {
+    display: flex;
+    gap: 15px;
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+.replay-col {
+    flex: 1;
+    background: #1E2633;
+    border: 2px solid #2C3444;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    min-height: 480px;
+}
+
+.replay-col h3 {
+    font-family: "Orbitron", sans-serif;
+    color: #00D4FF;
+    font-size: 14px;
+    background: #253041;
+    border-bottom: 2px solid #2C3444;
+    margin: -15px -15px 15px -15px;
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* DECISION PAGE (2 rows stacked layout) */
+#decision-main {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 10px;
+}
+
+.decision-row {
+    background: #1E2633;
+    border: 2px solid #2C3444;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    min-height: 240px;
+}
+
+.decision-row h3 {
+    font-family: "Orbitron", sans-serif;
+    color: #00D4FF;
+    font-size: 14px;
+    background: #253041;
+    border-bottom: 2px solid #2C3444;
+    margin: -15px -15px 15px -15px;
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.decision-table {
+
+    min-width: 2500px;
+    border-collapse: collapse;
+
+}
+
+.decision-table th {
+    padding: 10px 2px;
+    border-bottom: 1px solid #2C3444;
+    margin-top: 15px;
+    color: #26ff6e;
+    font-weight: bold;
+    text-align: left;
+    text-transform: uppercase;
+    font-family: monospace;
+    font-size: 13px;
+    letter-spacing: 1px;
+
+
+}
+
+
+/* Extra typography/styling for the new pages */
+.panel-content {
+    font-family: monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #E6E6E6;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.metric-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.metric-card {
+    background: #253041;
+    border: 1px solid #384456;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.metric-card-title {
+    font-size: 11px;
+    color: #8892B0;
+    text-transform: uppercase;
+    font-family: "Orbitron", sans-serif;
+}
+
+.metric-card-value {
+    font-size: 18px;
+    font-weight: bold;
+    color: #00D4FF;
+    margin-top: 5px;
+}
+
+/*Decision Page*/
+
+.decision-table-container {
+
+    height: 320px;
+    overflow-x: auto;
+    overflow-y: auto;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+}
+
+.decision-table-container::-webkit-scrollbar {
+
+    display: none;
+
+}
+
+/* Bottom Row 3 - Rules of Engagement style */
+.roe-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 2px 5px;
+    font-family: monospace;
+}
+
+.roe-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+}
+
+.roe-badge {
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 9px;
+    text-transform: uppercase;
+}
+
+.roe-badge.passed {
+    color: #00FF88;
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.roe-badge.warning {
+    color: #FF9F1D;
+    background: rgba(255, 159, 29, 0.1);
+    border: 1px solid rgba(255, 159, 29, 0.2);
+}
+
+.roe-desc {
+    color: #E6E6E6;
+}
+
+/* Weapons Employment style */
+.weapons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 12px;
+    padding: 2px 5px;
+    font-family: monospace;
+}
+
+.weapon-stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.weapon-label {
+    font-size: 9px;
+    color: #8892B0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.weapon-value {
+    font-size: 12px;
+    color: #00D4FF;
+    font-weight: bold;
+}
+
+.weapon-value.highlight {
+    color: #FFC107;
+}
+
+/* Export style */
+.export-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 2px 5px;
+}
+
+.export-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #253041;
+    border: 1px solid #384456;
+    color: #E6E6E6;
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: "Orbitron", sans-serif;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.export-btn:hover {
+    background: #00D4FF;
+    color: #111A26;
+    border-color: #00D4FF;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+.export-btn svg {
+    transition: stroke 0.2s ease-in-out;
+}
+
+.export-btn:hover svg {
+    stroke: #111A26;
+}
+
+/* Statistics grid style */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 2px 5px;
+    font-family: monospace;
+}
+
+/* Header Clock styling */
+.header-clock {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    font-family: "Orbitron", monospace;
+    color: #00D4FF;
+    padding: 0 15px;
+}
+
+.header-clock .clock-time {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
+}
+
+.header-clock .clock-date {
+    font-size: 10px;
+    color: #8892B0;
+    margin-top: 2px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    letter-spacing: 0.5px;
+}

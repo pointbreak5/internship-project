@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BVR Debriefing Dashboard - Replay</title>
+    <link rel="stylesheet" href="style15.css">
+    <link rel="stylesheet" href="leaflet/dist/leaflet.css">
+    <script src="leaflet/dist/leaflet.js"></script>
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+
+    <div id="container">
+
+        <header class="header">
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00D4FF" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round" style="margin-right: 12px; flex-shrink: 0;">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="6"></circle>
+                    <circle cx="12" cy="12" r="1.5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="4"></line>
+                    <line x1="12" y1="20" x2="12" y2="23"></line>
+                    <line x1="1" y1="12" x2="4" y2="12"></line>
+                    <line x1="20" y1="12" x2="23" y2="12"></line>
+                </svg>Beyond Visual Range
+            </div>
+            <a href="doc15.html" class="nav">Overview</a>
+            <a href="objectives.html" class="nav">Objectives</a>
+            <a href="timeline.html" class="nav">Timeline</a>
+            <a href="replay.html" class="nav" id="nav-over">Replay</a>
+            <a href="decision.html" class="nav">Decision</a>
+            <div class="header-clock" id="header-clock">
+                <span class="clock-time" id="clock-time"></span>
+                <span class="clock-date" id="clock-date"></span>
+            </div>
+        </header>
+    </div>
+
+    <!-- Replay Page: keeping 3 divs parallel to each other (under the header) -->
+    <div id="replay-main">
+
+        <!-- Div 1: Replay Controls & Systems -->
+        <div class="replay-col" id="replay-left">
+            <h3>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                </svg>Playback Controls
+            </h3>
+            <div class="panel-content">
+                <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                    <button
+                        style="flex: 1; padding: 10px; background: #00D4FF; border: none; color: #111A26; font-family: 'Orbitron', sans-serif; font-weight: bold; cursor: pointer; border-radius: 4px;">PLAY</button>
+                    <button
+                        style="flex: 1; padding: 10px; background: #253041; border: 1px solid #384456; color: white; font-family: 'Orbitron', sans-serif; cursor: pointer; border-radius: 4px;">PAUSE</button>
+                </div>
+
+                <p><strong>Simulation Speed:</strong></p>
+                <div style="display: flex; gap: 5px; margin-bottom: 20px;">
+                    <button
+                        style="flex: 1; padding: 5px; background: #253041; border: 1px solid #00D4FF; color: white; font-size: 11px;">1x</button>
+                    <button
+                        style="flex: 1; padding: 5px; background: #253041; border: 1px solid #384456; color: #8892B0; font-size: 11px;">2x</button>
+                    <button
+                        style="flex: 1; padding: 5px; background: #253041; border: 1px solid #384456; color: #8892B0; font-size: 11px;">5x</button>
+                </div>
+
+                <div class="metric-grid">
+                    <div class="metric-card">
+                        <div class="metric-card-title">Telemetry Time</div>
+                        <div class="metric-card-value">14:02:15</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-card-title">Active Targets</div>
+                        <div class="metric-card-value">02</div>
+                    </div>
+                </div>
+
+                <div class="metric-grid" style="margin-top: 15px;">
+                    <div class="metric-card" style="grid-column: span 2;">
+                        <div class="metric-card-title">Current Phase</div>
+                        <div class="metric-card-value" style="color: #FF9F1D;">BVR Engagement</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Div 2: Tactical Simulator (Visual display) -->
+        <div class="replay-col" id="replay-mid" style="flex: 1.5;">
+            <h3>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>Tactical Map View
+            </h3>
+            <div class="panel-content" id="map1"
+                style="background-image: url('ma.jpg'); background-size: cover; background-position: center; border: 1px solid #2C3444; border-radius: 4px; position: relative; min-height: 350px;">
+                <!-- Crosshairs overlay for tactical look -->
+                <div
+                    style="position: absolute; top: 50%; left: 50%; width: 60px; height: 60px; border: 2px dashed #FF4D4D; border-radius: 50%; transform: translate(-50%, -50%);">
+                </div>
+                <div
+                    style="position: absolute; top: 50%; left: 50%; width: 2px; height: 80px; background: rgba(255, 77, 77, 0.4); transform: translate(-50%, -50%);">
+                </div>
+                <div
+                    style="position: absolute; top: 50%; left: 50%; width: 80px; height: 2px; background: rgba(255, 77, 77, 0.4); transform: translate(-50%, -50%);">
+                </div>
+
+                <!-- Aircraft simulation dots -->
+                <div
+                    style="position: absolute; top: 35%; left: 40%; color: #00D4FF; font-weight: bold; font-size: 11px;">
+                    ▲ Eagle-1 (420 kts)
+                </div>
+                <div
+                    style="position: absolute; top: 60%; left: 65%; color: #FF4D4D; font-weight: bold; font-size: 11px;">
+                    ▼ Bogey (480 kts)
+                </div>
+            </div>
+        </div>
+
+        <!-- Div 3: Communication Feed -->
+        <div class="replay-col" id="replay-right" style="flex: 1.2;">
+            <h3>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>Comms Log & Radio Feed
+            </h3>
+            <div class="panel-content">
+                <table id="communication-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Sender</th>
+                            <th>Receiver</th>
+                            <th>Message</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="communication-body">
+                        <!-- Populated dynamically via index.js -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
